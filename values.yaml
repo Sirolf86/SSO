@@ -1,0 +1,10 @@
+appname: sandbox-keycloak
+namespace: rhsso
+keystore_directory: /opt/keycloak/secret
+keystore_file: keystore.ks
+keystore_type: JKS
+truststore_file: truststore.ts
+rhsso_secret: rhsso-keycloak-tls-cert
+rhsso_configmap: keycloak-postconfigure
+rhsso_post_config_file: postconfigure.sh
+rhsso_post_config_mountpath: /opt/eap/extensions

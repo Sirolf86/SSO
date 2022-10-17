@@ -3,8 +3,8 @@ kind: Keycloak
 metadata:
   labels:
     app: sso
-  name: sandbox-keycloak # var
-  namespace: rhsso  # var
+  name: {{ .Values.appname }}
+  namespace: {{ .Values.namespace }}
 spec:
   externalAccess:
     enabled: true
@@ -14,75 +14,39 @@ spec:
     experimental:
       env:
         - name: KEYCLOAK_KEYSTORE_DIR
-          value: /opt/keycloak/secret  # var
+          value: {{ .Values.keystore_directory }}
         - name: KEYCLOAK_KEYSTORE
-          value: keystore.ks # var
+          value: {{ .Values.keystore_file }}
         - name: KEYCLOAK_KEYSTORE_TYPE
-          value: JKS # var
+          value: {{ .Values.keystore_type }}
         - name: KEYCLOAK_KEYSTORE_PASSWORD
           value: 2bf7d8ac74a7553d27bf981028c422f66e0cfc9c # var --> NS-DEV-CCI -> rhsso-keycloak-tls-cert-pw --> hoe ophalen?
         - name: KEYCLOAK_TRUSTSTORE
-          value: truststore.ts # var
+          value: {{ .Values.truststore_file }}
         - name: KEYCLOAK_KEYSTORE_TYPE
-          value: JKS # var
+          value: {{ .Values.keystore_type }}
         - name: KEYCLOAK_TRUSTSTORE_DIR
-          value: /opt/keycloak/secret # var
+          value: {{ .Values.keystore_directory }}
         - name: KEYCLOAK_TRUSTSTORE_PASSWORD
           value: 2bf7d8ac74a7553d27bf981028c422f66e0cfc9c # var --> NS-DEV-CCI -> rhsso-keycloak-tls-cert-pw --> hoe ophalen?
       volumes:
         items:
           - items:
-              - key: keystore.ks  # var
-                path: keystore.ks # var
-              - key: truststore.ts # var
-                path: truststore.ts # var
-            mountPath: /opt/keycloak/secret # var
+              - key: {{ .Values.keystore_file }}
+                path: {{ .Values.keystore_file }}
+              - key: {{ .Values.truststore_file }}
+                path: {{ .Values.truststore_file }}
+            mountPath: {{ .Values.keystore_directory }}
             name: eap-keystore-volume
             secrets:
-              - rhsso-keycloak-tls-cert # var ?
+              - {{ Values.rhsso_secret }} # --> uit azure?
           - configMaps:
-              - keycloak-postconfigure
+              - {{ .Values.rhsso_configmap }}
             items:
-              - key: postconfigure.sh
+              - key: {{ .Values.rhsso_post_config_file }}
                 mode: 511
-                path: postconfigure.sh
-            mountPath: /opt/eap/extensions
-            name: keycloak-postconfigure
-    imagePullPolicy: Always
-  storageClassName: managed-premium
-status:
-  credentialSecret: credential-sandbox-keycloak
-  externalURL: https://keycloak-rhsso.apps.v2c6zabo.westeurope.aroapp.io
-  internalURL: https://keycloak.rhsso.svc:8443
-  message: 'Route.route.openshift.io "keycloak-metrics-rewrite" is invalid: spec.path:
-    Invalid value: "/auth/realms/master/metrics": passthrough termination does not
-    support paths'
-  phase: failing
-  ready: false
-  secondaryResources:
-    ConfigMap:
-      - keycloak-probes
-    Deployment:
-      - keycloak-postgresql
-    GrafanaDashboard:
-      - keycloak
-    PersistentVolumeClaim:
-      - keycloak-postgresql-claim
-    PrometheusRule:
-      - keycloak
-    Route:
-      - keycloak
-      - keycloak-metrics-rewrite
-    Secret:
-      - credential-sandbox-keycloak
-      - keycloak-db-secret
-    Service:
-      - keycloak-postgresql
-      - keycloak
-      - keycloak-discovery
-      - keycloak-monitoring
-    ServiceMonitor:
-      - keycloak-service-monitor
-    StatefulSet:
-      - keycloak
-  version: main
+                path: {{ .Values.rhsso_post_config_file }}
+            mountPath: {{ .Values.rhsso_post_config_mountpath }}
+            name: {{ .Values.rhsso_configmap }}
+    imagePullPolicy: Always  # Default dus weglaten?
+  storageClassName: managed-premium # Default?
