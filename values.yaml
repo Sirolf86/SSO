@@ -8,3 +8,6 @@ rhsso_secret: rhsso-keycloak-tls-cert
 rhsso_configmap: keycloak-postconfigure
 rhsso_post_config_file: postconfigure.sh
 rhsso_post_config_mountpath: /opt/eap/extensions
+
+
+configmap_name: keycloak-postconfigure
