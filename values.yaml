@@ -1,5 +1,6 @@
 appname: sandbox-keycloak
-namespace: rhsso
+#namespace: rhsso
+namespace: floris-sso
 keystore_directory: /opt/keycloak/secret
 keystore_file: keystore.ks
 keystore_type: JKS

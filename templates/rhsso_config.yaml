@@ -39,7 +39,7 @@ spec:
             mountPath: {{ .Values.keystore_directory }}
             name: eap-keystore-volume
             secrets:
-              - {{ Values.rhsso_secret }} # --> uit azure?
+              - {{ .Values.rhsso_secret }} # --> uit azure?
           - configMaps:
               - {{ .Values.rhsso_configmap }}
             items:
@@ -49,4 +49,4 @@ spec:
             mountPath: {{ .Values.rhsso_post_config_mountpath }}
             name: {{ .Values.rhsso_configmap }}
     imagePullPolicy: Always  # Default dus weglaten?
-  storageClassName: managed-premium # Default?
+#  storageClassName: managed-premium # Wat is deze waarde?
