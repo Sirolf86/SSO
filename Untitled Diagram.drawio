@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-18T12:23:54.919Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="XBE0cDhCIHrM18bxZwYh" version="20.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-18T12:24:38.062Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="59L5k0VmPXexVYX6Srdd" version="20.4.1" type="github">
   <diagram id="QEIx5E6AhaT6GnV2wl93" name="Page-1">
     <mxGraphModel dx="1422" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -14,23 +14,23 @@
             <mxPoint x="250" y="200" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xisLzzriFzYKXa0Xned0-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="xisLzzriFzYKXa0Xned0-1" target="xisLzzriFzYKXa0Xned0-7">
+        <mxCell id="xisLzzriFzYKXa0Xned0-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="xisLzzriFzYKXa0Xned0-1" target="xisLzzriFzYKXa0Xned0-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xisLzzriFzYKXa0Xned0-1" value="Repo voor gitops o.b.v. helm&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="60" y="100" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xisLzzriFzYKXa0Xned0-3" value="Chart.yaml&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="80" width="80" height="30" as="geometry" />
+          <mxGeometry x="140" y="90" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="xisLzzriFzYKXa0Xned0-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="190" width="120" height="60" as="geometry" />
+          <mxGeometry x="370" y="170" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xisLzzriFzYKXa0Xned0-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="270" width="120" height="60" as="geometry" />
+          <mxGeometry x="370" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xisLzzriFzYKXa0Xned0-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="110" width="120" height="60" as="geometry" />
+          <mxGeometry x="370" y="100" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xisLzzriFzYKXa0Xned0-10" value="Nexus Helm charts&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="370" y="60" width="120" height="30" as="geometry" />
